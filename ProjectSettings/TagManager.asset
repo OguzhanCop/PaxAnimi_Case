@@ -6,6 +6,8 @@ TagManager:
   tags:
   - colaclone
   - cola
+  - colamachine
+  - ordergate
   layers:
   - Default
   - TransparentFX
