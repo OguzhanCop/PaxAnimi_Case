@@ -5,20 +5,16 @@ using DG.Tweening;
 
 public class MoveCollectorChild : MonoBehaviour
 {
-    
-    void Start()
-    {
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    bool finish=false;
     public void MovePos(float moveX)
     {
+        if(!finish)
         transform.DOMoveX(moveX, 0.2f);
 
+    }
+    public void MoveFinish()
+    {
+        finish = true;
+        transform.DOMoveX(50, 2f);
     }
 }

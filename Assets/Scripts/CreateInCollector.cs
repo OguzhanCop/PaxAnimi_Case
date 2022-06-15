@@ -27,27 +27,54 @@ public class CreateInCollector : MonoBehaviour
         GameObject stackColaClone = Instantiate(colaPrefab,transform.position+new Vector3(0,0,cola.Count+1), transform.rotation);
         stackColaClone.transform.parent = gameObject.transform;
         cola.Add(stackColaClone);
+        UI.instance.AddScore(10);
         StartCoroutine(CreateColaAnim());
     }
     IEnumerator CreateColaAnim()
     {
         for (int i = cola.Count-1; i >= 0; i--)
         {
-            Vector3 scale = new Vector3(117, 117, 117);
             int index = i;
-            cola[index].transform.GetChild(0).GetChild(2).DOScale(scale*2, 0.2f).OnComplete(() =>
-            cola[index].transform.GetChild(0).GetChild(2).DOScale(scale, 0.2f));
-            yield return new WaitForSecondsRealtime(0.05f);
-            
+            if (cola[index].transform.GetChild(0).gameObject.activeSelf)
+            {
+                Vector3 scale = new Vector3(117, 117, 117);
+
+                cola[index].transform.GetChild(0).GetChild(2).DOScale(scale * 2, 0.2f).OnComplete(() =>
+                cola[index].transform.GetChild(0).GetChild(2).DOScale(scale, 0.2f));
+                yield return new WaitForSecondsRealtime(0.05f);
+            }
+
+            if (cola[index].transform.GetChild(1).gameObject.activeSelf)
+            {
+                Vector3 scale = new Vector3(0.3f, 0.3f, 0.3f);
+
+                cola[index].transform.GetChild(1).DOScale(scale * 2, 0.2f).OnComplete(() =>
+                cola[index].transform.GetChild(1).DOScale(scale, 0.2f));
+                yield return new WaitForSecondsRealtime(0.05f);
+            }
+
+            if (cola[index].transform.GetChild(2).gameObject.activeSelf)
+            {
+                Vector3 scale = new Vector3(0.1f, 0.1f, 0.1f);
+
+                cola[index].transform.GetChild(2).GetChild(0).DOScale(scale * 2, 0.2f).OnComplete(() =>
+                cola[index].transform.GetChild(2).GetChild(0).DOScale(scale, 0.2f));
+                yield return new WaitForSecondsRealtime(0.05f);
+            }
+
+
+
         }
     }
     
     void MoveColaPrefab()
     {
-        for (int i = 1; i < cola.Count; i++)
-        {
-            cola[i].GetComponent<MoveCollectorChild>().MovePos(cola[i - 1].transform.position.x);
-        }
+            for (int i = 1; i < cola.Count; i++)
+            {
+                cola[i].GetComponent<MoveCollectorChild>().MovePos(cola[i - 1].transform.position.x);
+            }
+        
+       
     }
     public void RemoveColaList()
     {
@@ -55,10 +82,21 @@ public class CreateInCollector : MonoBehaviour
     }
     public void UpgradeColaBottle(Transform pos)
     {
-        int y = (int)(pos.localPosition.z / 3.3f);
-        Debug.Log(y);
-        cola[y-1].transform.GetChild(0).gameObject.SetActive(false);
-        cola[y-1].transform.GetChild(1).gameObject.SetActive(true);
+        int index = (int)(pos.localPosition.z / 3.3f);
+        if (cola[index - 1].transform.GetChild(1).gameObject.activeSelf)
+        {
+            UI.instance.AddScore(20);
+            cola[index - 1].transform.GetChild(1).gameObject.SetActive(false);
+            cola[index - 1].transform.GetChild(2).gameObject.SetActive(true);
+        }
+        if (cola[index - 1].transform.GetChild(0).gameObject.activeSelf)
+        {
+            UI.instance.AddScore(10);
+            cola[index - 1].transform.GetChild(0).gameObject.SetActive(false);
+            cola[index - 1].transform.GetChild(1).gameObject.SetActive(true);
+        }
+      
+
 
     }
 }

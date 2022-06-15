@@ -9,6 +9,10 @@ TagManager:
   - colamachine
   - ordergate
   - collector
+  - coke
+  - cokeglass
+  - cokebottle
+  - finish
   layers:
   - Default
   - TransparentFX
