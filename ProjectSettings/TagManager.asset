@@ -8,6 +8,7 @@ TagManager:
   - cola
   - colamachine
   - ordergate
+  - collector
   layers:
   - Default
   - TransparentFX

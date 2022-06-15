@@ -209,11 +209,11 @@ GameObject:
   - component: {fileID: 4315933962276408303}
   - component: {fileID: 2400254045361656389}
   - component: {fileID: 6854821729362564690}
-  - component: {fileID: -1539323178319784830}
   - component: {fileID: 3518144814879460806}
+  - component: {fileID: -2323843501063580348}
   m_Layer: 0
   m_Name: Coke
-  m_TagString: Untagged
+  m_TagString: colaclone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,7 +246,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3507908006316069205}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.7626774, y: 4.712308, z: 3.1758692}
@@ -267,18 +267,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-1539323178319784830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3507908006316069205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4447b3b1bbd4a7b47a1ddd63f57f36b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3518144814879460806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,6 +277,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7cc4d5ebc623d644988c7503d89f946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2323843501063580348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3507908006316069205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1a121cda32a8b4197f04882a3a97ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5044961441315710144
