@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 7274478867095708078}
   m_Layer: 0
   m_Name: coke5.3
-  m_TagString: Untagged
+  m_TagString: cokeglass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

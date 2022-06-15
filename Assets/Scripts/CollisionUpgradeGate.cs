@@ -8,7 +8,7 @@ public class CollisionUpgradeGate : MonoBehaviour
     {
         if (other.gameObject.tag == "colaclone")
         {
-            Destroy(other.gameObject);
+          
             CreateInCollector.instance.UpgradeColaBottle(other.transform);
 
         }

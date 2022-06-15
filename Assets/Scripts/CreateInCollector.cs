@@ -57,8 +57,8 @@ public class CreateInCollector : MonoBehaviour
     {
         int y = (int)(pos.localPosition.z / 3.3f);
         Debug.Log(y);
-        cola[y].transform.GetChild(0).gameObject.SetActive(false);
-        cola[y].transform.GetChild(1).gameObject.SetActive(true);
+        cola[y-1].transform.GetChild(0).gameObject.SetActive(false);
+        cola[y-1].transform.GetChild(1).gameObject.SetActive(true);
 
     }
 }
