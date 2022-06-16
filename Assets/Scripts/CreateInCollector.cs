@@ -43,24 +43,25 @@ public class CreateInCollector : MonoBehaviour
                 cola[index].transform.GetChild(0).GetChild(2).DOScale(scale, 0.2f));
                 yield return new WaitForSecondsRealtime(0.05f);
             }
-
             if (cola[index].transform.GetChild(1).gameObject.activeSelf)
             {
-                Vector3 scale = new Vector3(0.3f, 0.3f, 0.3f);
+                Vector3 scale = new Vector3(0.1f, 0.1f, 0.1f);
 
-                cola[index].transform.GetChild(1).DOScale(scale * 2, 0.2f).OnComplete(() =>
-                cola[index].transform.GetChild(1).DOScale(scale, 0.2f));
+                cola[index].transform.GetChild(1).GetChild(0).DOScale(scale * 2, 0.2f).OnComplete(() =>
+                cola[index].transform.GetChild(1).GetChild(0).DOScale(scale, 0.2f));
                 yield return new WaitForSecondsRealtime(0.05f);
             }
 
             if (cola[index].transform.GetChild(2).gameObject.activeSelf)
             {
-                Vector3 scale = new Vector3(0.1f, 0.1f, 0.1f);
+                Vector3 scale = new Vector3(0.3f, 0.3f, 0.3f);
 
-                cola[index].transform.GetChild(2).GetChild(0).DOScale(scale * 2, 0.2f).OnComplete(() =>
-                cola[index].transform.GetChild(2).GetChild(0).DOScale(scale, 0.2f));
+                cola[index].transform.GetChild(2).DOScale(scale * 2, 0.2f).OnComplete(() =>
+                cola[index].transform.GetChild(2).DOScale(scale, 0.2f));
                 yield return new WaitForSecondsRealtime(0.05f);
             }
+
+            
 
 
 

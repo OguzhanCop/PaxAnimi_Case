@@ -33,8 +33,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5604507639335007368}
-  - {fileID: 8573039532593742347}
   - {fileID: 5339165674491113972}
+  - {fileID: 8573039532593742347}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -98,13 +98,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3686113427049502932}
     m_Modifications:
-    - target: {fileID: 3614284078082179727, guid: 85831db0f3ba4a64c88f021eef58a72c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4967082763563000044, guid: 85831db0f3ba4a64c88f021eef58a72c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4967082763563000044, guid: 85831db0f3ba4a64c88f021eef58a72c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -146,23 +142,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4967082763563000044, guid: 85831db0f3ba4a64c88f021eef58a72c, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5739081091274455638, guid: 85831db0f3ba4a64c88f021eef58a72c, type: 3}
       propertyPath: m_Name
       value: coke5.3
       objectReference: {fileID: 0}
-    - target: {fileID: 5739081091274455638, guid: 85831db0f3ba4a64c88f021eef58a72c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3202122008024914826, guid: 85831db0f3ba4a64c88f021eef58a72c, type: 3}
-    - {fileID: 7274478867095708078, guid: 85831db0f3ba4a64c88f021eef58a72c, type: 3}
-    - {fileID: 3654678523896022281, guid: 85831db0f3ba4a64c88f021eef58a72c, type: 3}
-    - {fileID: 3219206512531255822, guid: 85831db0f3ba4a64c88f021eef58a72c, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85831db0f3ba4a64c88f021eef58a72c, type: 3}
 --- !u!4 &5339165674491113972 stripped
 Transform:
@@ -179,10 +163,6 @@ PrefabInstance:
     - target: {fileID: 3507908006316069205, guid: 36d2e242d9d1d0f44aa8d79c38944801, type: 3}
       propertyPath: m_Name
       value: Coke
-      objectReference: {fileID: 0}
-    - target: {fileID: 3507908006316069205, guid: 36d2e242d9d1d0f44aa8d79c38944801, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4315933962276408303, guid: 36d2e242d9d1d0f44aa8d79c38944801, type: 3}
       propertyPath: m_RootOrder
@@ -228,15 +208,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8911608908815364975, guid: 36d2e242d9d1d0f44aa8d79c38944801, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3518144814879460806, guid: 36d2e242d9d1d0f44aa8d79c38944801, type: 3}
-    - {fileID: -2323843501063580348, guid: 36d2e242d9d1d0f44aa8d79c38944801, type: 3}
-    - {fileID: 2400254045361656389, guid: 36d2e242d9d1d0f44aa8d79c38944801, type: 3}
-    - {fileID: 6854821729362564690, guid: 36d2e242d9d1d0f44aa8d79c38944801, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36d2e242d9d1d0f44aa8d79c38944801, type: 3}
 --- !u!4 &5604507639335007368 stripped
 Transform:
@@ -252,19 +224,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 61923511533687368, guid: 1a747c877136de042a0b6156489ac56c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61923511533687368, guid: 1a747c877136de042a0b6156489ac56c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 61923511533687368, guid: 1a747c877136de042a0b6156489ac56c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 61923511533687368, guid: 1a747c877136de042a0b6156489ac56c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 61923511533687368, guid: 1a747c877136de042a0b6156489ac56c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -310,15 +270,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coke_Botle
       objectReference: {fileID: 0}
-    - target: {fileID: 833218396614396146, guid: 1a747c877136de042a0b6156489ac56c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 527280037201229216, guid: 1a747c877136de042a0b6156489ac56c, type: 3}
-    - {fileID: 527280037201229217, guid: 1a747c877136de042a0b6156489ac56c, type: 3}
-    - {fileID: 527280037201229222, guid: 1a747c877136de042a0b6156489ac56c, type: 3}
-    - {fileID: 527280037201229223, guid: 1a747c877136de042a0b6156489ac56c, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a747c877136de042a0b6156489ac56c, type: 3}
 --- !u!4 &8573039532593742347 stripped
 Transform:

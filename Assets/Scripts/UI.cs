@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class UI : MonoBehaviour
 {
     public static UI instance;
-    int score=0;
+    float score=0;
     [SerializeField] private TextMeshPro scoreText;
     public GameObject levelComplete;
     public Button play;
@@ -23,10 +23,16 @@ public class UI : MonoBehaviour
         instance = this;
     }
   
-    public void AddScore(int value)
+    public void AddScore(float value)
     {
         score += value;
         scoreText.text = score.ToString();
+    }
+    public void DecreaseScoreText(float value)
+    {
+        score -= value;
+        scoreText.text = score.ToString();
+
     }
     public void WinPanel()
     {
@@ -77,4 +83,5 @@ public class UI : MonoBehaviour
 
 
     }
+    
 }
