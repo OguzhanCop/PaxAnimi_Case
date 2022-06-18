@@ -6,6 +6,10 @@ using DG.Tweening;
 public class MoveCollectorChild : MonoBehaviour
 {
     bool finish=false;
+    public void Start()
+    {
+        
+    }
     public void MovePos(float moveX)
     {
         if(!finish)

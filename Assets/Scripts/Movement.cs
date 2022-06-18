@@ -7,8 +7,7 @@ using DG.Tweening;
 public class Movement : MonoBehaviour
 {
     
-   float speed =10;
-   
+   public float speed =2;  
 
 
     void Start()

@@ -7,7 +7,7 @@ public class CollisionFinish : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "colaclone")
+        if (other.gameObject.tag == "colaclone"|| other.gameObject.tag == "colacloneend")
         {
 
             other.transform.SetParent(null);

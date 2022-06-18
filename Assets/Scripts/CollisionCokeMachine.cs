@@ -6,7 +6,7 @@ public class CollisionCokeMachine : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "colaclone")
+        if (other.gameObject.tag == "colaclone"|| other.gameObject.tag == "colacloneend")
         {
             Destroy(other.gameObject);
             CreateInCollector.instance.RemoveColaList();

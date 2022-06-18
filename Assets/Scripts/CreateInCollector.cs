@@ -12,15 +12,13 @@ public class CreateInCollector : MonoBehaviour
     void Start()
     {
         instance = this;
-        DOTween.Init();
+        DOTween.Init();       
         
-        
-    }
-
-    
+    }    
     void Update()
     {
         MoveColaPrefab();
+        ColaListTagChange();
     }
     public void CreateCola()
     {
@@ -59,11 +57,7 @@ public class CreateInCollector : MonoBehaviour
                 cola[index].transform.GetChild(2).DOScale(scale * 2, 0.2f).OnComplete(() =>
                 cola[index].transform.GetChild(2).DOScale(scale, 0.2f));
                 yield return new WaitForSecondsRealtime(0.05f);
-            }
-
-            
-
-
+            }  
 
         }
     }
@@ -73,8 +67,7 @@ public class CreateInCollector : MonoBehaviour
             for (int i = 1; i < cola.Count; i++)
             {
                 cola[i].GetComponent<MoveCollectorChild>().MovePos(cola[i - 1].transform.position.x);
-            }
-        
+            }       
        
     }
     public void RemoveColaList()
@@ -83,7 +76,8 @@ public class CreateInCollector : MonoBehaviour
     }
     public void UpgradeColaBottle(Transform pos)
     {
-        int index = (int)(pos.localPosition.z / 3.3f);
+        int index = Mathf.RoundToInt(pos.localPosition.z);
+        Debug.Log(index);
         if (cola[index - 1].transform.GetChild(1).gameObject.activeSelf)
         {
             UI.instance.AddScore(20);
@@ -95,9 +89,39 @@ public class CreateInCollector : MonoBehaviour
             UI.instance.AddScore(10);
             cola[index - 1].transform.GetChild(0).gameObject.SetActive(false);
             cola[index - 1].transform.GetChild(1).gameObject.SetActive(true);
+        }     
+
+
+    }
+    public void ColaListTagChange()
+    {
+        if (cola.Count > 0) 
+        cola[cola.Count - 1].transform.tag = "colacloneend";
+        for (int i = cola.Count - 2; i >= 0; i--)
+        {
+            cola[i].transform.tag = "colaclone";
         }
-      
+    }
+    public void CollisionObstacleDispersionCola(Transform pos)
+    {
+        int index = Mathf.RoundToInt(pos.localPosition.z);
 
-
+        if (index-2 >= 0)
+            cola[index- 2].transform.tag = "colacloneend";        
+        Debug.Log(index);
+        for (int i = cola.Count-1; i >= index-1; i--)
+        {
+            cola[i].transform.SetParent(null);
+            cola[i].transform.tag = "disperedcola";
+            cola[i].transform.DOMoveZ(pos.position.z + Random.Range(15f,25f) ,2f, false);
+            cola[i].transform.DOMoveX(Random.Range(54F, 63F), 1f, false);
+            cola.RemoveAt(i);
+        }
+    }
+    public void DispersedColaAdd(GameObject dispersedCola)
+    {
+        dispersedCola.transform.position = transform.position + new Vector3(0, 0, cola.Count + 1);
+        dispersedCola.transform.parent = gameObject.transform;
+        cola.Add(dispersedCola);
     }
 }

@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class CollisionCollectCola : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private void Start()
+    {
+        
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "cola")
+        if (other.gameObject.tag == "colaclone"|| other.gameObject.tag == "colacloneend"||other.gameObject.tag=="collector")
         {
-            Destroy(other.gameObject);
+            Destroy(gameObject);
             CreateInCollector.instance.CreateCola();
 
         }
