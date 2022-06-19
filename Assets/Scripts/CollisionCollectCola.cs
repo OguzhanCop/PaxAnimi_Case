@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class CollisionCollectCola : MonoBehaviour
 {
-    private void Start()
-    {
-        
-    }
+ 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "colaclone"|| other.gameObject.tag == "colacloneend"||other.gameObject.tag=="collector")

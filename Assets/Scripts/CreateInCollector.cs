@@ -7,12 +7,11 @@ public class CreateInCollector : MonoBehaviour
 {
     public static CreateInCollector instance;
     public List<GameObject> cola = new List<GameObject>();
-    public GameObject colaPrefab;
-    public GameObject colaBottlePrefab;
+    public GameObject colaPrefab;   
     void Start()
     {
         instance = this;
-        DOTween.Init();       
+        DOTween.Init();   
         
     }    
     void Update()
@@ -70,6 +69,15 @@ public class CreateInCollector : MonoBehaviour
             }       
        
     }
+    public void ColaListTagChange()
+    {
+        if (cola.Count > 0)
+            cola[cola.Count - 1].transform.tag = "colacloneend";
+        for (int i = cola.Count - 2; i >= 0; i--)
+        {
+            cola[i].transform.tag = "colaclone";
+        }
+    }
     public void RemoveColaList()
     {
         cola.RemoveAt(cola.Count - 1);
@@ -93,15 +101,7 @@ public class CreateInCollector : MonoBehaviour
 
 
     }
-    public void ColaListTagChange()
-    {
-        if (cola.Count > 0) 
-        cola[cola.Count - 1].transform.tag = "colacloneend";
-        for (int i = cola.Count - 2; i >= 0; i--)
-        {
-            cola[i].transform.tag = "colaclone";
-        }
-    }
+   
     public void CollisionObstacleDispersionCola(Transform pos)
     {
         int index = Mathf.RoundToInt(pos.localPosition.z);

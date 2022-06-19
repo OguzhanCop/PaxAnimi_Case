@@ -9,7 +9,8 @@ public class UI : MonoBehaviour
 {
     public static UI instance;
     float score=0;
-    [SerializeField] private TextMeshPro scoreText;
+    public TextMeshPro scoreText;
+    public TextMeshProUGUI scoreTextWinPanel;
     public GameObject levelComplete;
     public GameObject levelFailed;
     public Button play;
@@ -39,6 +40,8 @@ public class UI : MonoBehaviour
     {
         finish = true;
         levelComplete.gameObject.SetActive(true);
+        scoreTextWinPanel.text = "SCORE:" + score;
+        scoreTextWinPanel.gameObject.SetActive(true);
         
     }
     public void LosePanel()
@@ -46,6 +49,11 @@ public class UI : MonoBehaviour
         levelFailed.gameObject.SetActive(true);
     }
     public void WinPanelButton()
+    {
+        restart.gameObject.SetActive(true);
+        quit.gameObject.SetActive(true);
+    }
+    public void LosePanelButton()
     {
         restart.gameObject.SetActive(true);
         quit.gameObject.SetActive(true);
@@ -74,19 +82,6 @@ public class UI : MonoBehaviour
     {
         Application.Quit();
     }
-    public void RestartGame()
-    {
-        restart.gameObject.SetActive(true);
-        quit.gameObject.SetActive(true);
-    }
-  
-    public void PlayerDead()
-    {
-        Time.timeScale = 0;
-        restart.gameObject.SetActive(true);        
-        quit.gameObject.SetActive(true);
-
-
-    }
+    
     
 }
