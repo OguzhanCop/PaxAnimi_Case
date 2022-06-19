@@ -11,6 +11,7 @@ public class UI : MonoBehaviour
     float score=0;
     [SerializeField] private TextMeshPro scoreText;
     public GameObject levelComplete;
+    public GameObject levelFailed;
     public Button play;
     public Button quit;
     public Button restart;    
@@ -39,6 +40,10 @@ public class UI : MonoBehaviour
         finish = true;
         levelComplete.gameObject.SetActive(true);
         
+    }
+    public void LosePanel()
+    {
+        levelFailed.gameObject.SetActive(true);
     }
     public void WinPanelButton()
     {

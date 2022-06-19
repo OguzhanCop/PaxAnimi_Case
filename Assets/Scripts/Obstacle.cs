@@ -20,6 +20,11 @@ public abstract class Obstacle : MonoBehaviour
             CreateInCollector.instance.CollisionObstacleDispersionCola(other.transform);
 
         }
+        if (other.gameObject.tag == "Player")
+        {
+            
+            CreateInCollector.instance.CollisionPlayer();
+        }
     }
     public void DecreaseScore()
     {

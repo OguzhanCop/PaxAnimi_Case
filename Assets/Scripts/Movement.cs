@@ -6,13 +6,14 @@ using DG.Tweening;
 
 public class Movement : MonoBehaviour
 {
-    
-   public float speed =2;  
+    public static Movement instance;
+    public float speed =2;  
 
 
     void Start()
     {
         DOTween.Init();
+        instance = this;
 
     }
     void Update()
@@ -48,12 +49,23 @@ public class Movement : MonoBehaviour
         }
 
     }
+    public void death()
+    {
+        transform.GetChild(2).GetComponent<Animator>().SetTrigger("death");
+        speed = 0;
+        Invoke("FailedLevel", 2f);
+
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "colamachine")
-        {
+        {           
             transform.DOMoveZ(transform.position.z - 20, 1f, false);
-
         }
+    }
+    public void FailedLevel()
+    {
+        UI.instance.LosePanel();
+
     }
 }

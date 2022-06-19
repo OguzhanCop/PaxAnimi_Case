@@ -10,7 +10,7 @@ public class CollisionDispersedCola : MonoBehaviour
         {
             if (other.gameObject.tag == "disperedcola")
             {
-                Debug.Log("asd");
+                
                 CreateInCollector.instance.DispersedColaAdd(other.gameObject);
             }
 
